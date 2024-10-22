@@ -13,7 +13,9 @@ const DialogPortal = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement> & DialogPrimitive.DialogPortalProps) => (
-  <DialogPrimitive.Portal className={cn(className)} {...props} />
+  <div className={cn(className)}>
+    <DialogPrimitive.Portal {...props} />
+  </div>
 )
 DialogPortal.displayName = DialogPrimitive.Portal.displayName
 
