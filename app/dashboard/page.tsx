@@ -23,6 +23,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import DashboardCourseComponent from '@/components/ui/DashboardCourseComponent'
 import courses from '@/constants/courses'
+import Link from 'next/link'
 
 export default function Dashboard() {
   const [isPaused, setIsPaused] = useState(false)
@@ -134,12 +135,14 @@ export default function Dashboard() {
       </div>
 
         <div className="flex flex-col items-center space-y-4">
-          <Button 
-            onClick={handleStartSession}
-            className="w-full sm:w-5/6 md:w-2/3 h-16 sm:h-20 md:h-24 text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#B8860B] to-[#DAA520] hover:from-[#DAA520] hover:to-[#B8860B] text-white shadow-lg transform transition-all duration-300 hover:scale-105"
-          >
-            Start Main Session
-          </Button>
+          <Link href='/dashboard/main-session'>
+            <Button 
+              onClick={handleStartSession}
+              className="w-full sm:w-5/6 md:w-2/3 h-16 sm:h-20 md:h-24 text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#B8860B] to-[#DAA520] hover:from-[#DAA520] hover:to-[#B8860B] text-white shadow-lg transform transition-all duration-300 hover:scale-105"
+            >
+              Start Main Session
+            </Button>
+          </Link>
           <Button 
             onClick={() => setIsPaused(!isPaused)}
             className="w-full sm:w-2/3 md:w-1/3 h-10 sm:h-12 text-base sm:text-lg md:text-xl font-semibold bg-[#8B4513] hover:bg-[#A0522D] text-white shadow-md"
