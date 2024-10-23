@@ -13,4 +13,5 @@ declare module 'lucide-react' {
   export const Circle: any;
   export const X: any;
   export const label: any;
+  export const ArrowUp: any;
 }
